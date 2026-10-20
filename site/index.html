@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CDL VOD Archive</title>
+  <meta name="description" content="Every Call of Duty League tournament broadcast, grouped by season and event, with live streams.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap header-row">
+      <h1>CDL <span>VOD Archive</span></h1>
+      <a class="live-link" href="https://www.youtube.com/@CDL/live" target="_blank" rel="noopener">Watch live on YouTube ↗</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="live" hidden>
+      <h2><span class="dot"></span> Live now</h2>
+      <div class="grid" id="live-grid"></div>
+    </section>
+
+    <section id="upcoming" hidden>
+      <h2>Upcoming streams</h2>
+      <div class="grid" id="upcoming-grid"></div>
+    </section>
+
+    <div class="controls">
+      <div class="seasons" id="seasons" role="tablist"></div>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search titles…" aria-label="Search titles">
+        <label><input id="full-only" type="checkbox"> Full broadcasts only</label>
+      </div>
+    </div>
+
+    <div id="tournaments"></div>
+    <p id="empty" class="muted" hidden>No videos match.</p>
+  </main>
+
+  <footer class="wrap muted">
+    <span id="updated"></span> · Videos from the official Call of Duty League YouTube channel. Not affiliated with Activision or the CDL.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
