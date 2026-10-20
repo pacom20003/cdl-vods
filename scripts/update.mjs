@@ -7,7 +7,7 @@
 //
 // Env:
 //   YT_API_KEY      required
-//   CHANNEL_HANDLE  default "@CDL"
+//   CHANNEL_HANDLE  default "@CODLeague" (official Call of Duty League channel)
 //   FULL_SYNC=1     re-read the whole uploads playlist (backfill / repair)
 //   API_BASE        override for testing
 
@@ -15,7 +15,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { classify } from './classify.mjs';
 
 const KEY = process.env.YT_API_KEY;
-const HANDLE = process.env.CHANNEL_HANDLE || '@CDL';
+const HANDLE = process.env.CHANNEL_HANDLE || '@CODLeague';
 const FULL_SYNC = process.env.FULL_SYNC === '1' || process.env.FULL_SYNC === 'true';
 const API = process.env.API_BASE || 'https://www.googleapis.com/youtube/v3';
 const DATA = new URL('../site/data/videos.json', import.meta.url);

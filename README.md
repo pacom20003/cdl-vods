@@ -36,7 +36,7 @@ Browser
 5. **First backfill:** *Actions → Update videos and deploy → Run workflow*, tick
    *full sync*. After that the schedule keeps it current.
 
-Optional: set a repository **variable** `CHANNEL_HANDLE` to use a channel other than `@CDL`.
+Optional: set a repository **variable** `CHANNEL_HANDLE` to use a channel other than `@CODLeague` (the official Call of Duty League channel).
 
 ## Fixing misclassified videos
 

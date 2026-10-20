@@ -38,7 +38,7 @@ jobs:
         run: node scripts/update.mjs
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
-          CHANNEL_HANDLE: ${{ vars.CHANNEL_HANDLE || '@CDL' }}
+          CHANNEL_HANDLE: ${{ vars.CHANNEL_HANDLE || '@CODLeague' }}
           FULL_SYNC: ${{ inputs.full_sync }}
 
       - name: Commit data if it changed

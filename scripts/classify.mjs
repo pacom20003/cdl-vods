@@ -16,12 +16,14 @@ export function seasonFor(title, publishedAt) {
 
 export function tournamentFor(title) {
   const major = title.match(/\bmajor\s*(\d|iv|v|i{1,3})\b/i);
-  const stage = title.match(/\bstage\s*(\d)\b/i);
+  const stage = title.match(/\bstage\s*(\d|iv|v|i{1,3})\b/i);
   const qual = /qualif/i.test(title);
 
   if (/\bchamp(ionship|ionships|s)?\b/i.test(title)) return 'Championship';
   if (major) return `Major ${toNum(major[1])} ${qual ? 'Qualifiers' : 'Tournament'}`;
-  if (stage) return /\bmajor\b/i.test(title) ? `Stage ${stage[1]} Major` : `Stage ${stage[1]}`;
+  if (stage) return /\bmajor\b/i.test(title) ? `Stage ${toNum(stage[1])} Major` : `Stage ${toNum(stage[1])}`;
+  if (/\bhome series\b/i.test(title)) return 'Home Series';
+  if (/opening weekend/i.test(title)) return 'Opening Weekend';
   if (/kick-?off|launch weekend/i.test(title)) return 'Kickoff';
   if (/\bminor\b/i.test(title)) return 'Minor';
   if (qual) return 'Qualifiers';
