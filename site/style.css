@@ -269,10 +269,21 @@ a { color: inherit; text-decoration: none; }
 .empty { text-align: center; color: var(--muted); padding: 60px 24px; font-size: 15px; }
 
 footer {
-  max-width: 1600px; margin: 0 auto; padding: 36px 24px 48px;
+  max-width: 1600px; margin: 24px auto 0; padding: 30px 24px 48px;
   font-size: 12.5px; color: var(--muted-2); border-top: 1px solid var(--border-soft);
-  display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 24px;
+  display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between;
 }
+.foot-left { display: flex; flex-wrap: wrap; gap: 4px 14px; max-width: 760px; }
+.credit {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  color: var(--muted); font-size: 13px; font-weight: 600;
+  padding: 7px 13px; border: 1px solid var(--border); border-radius: 999px;
+  background: var(--panel); transition: color .2s, border-color .2s, transform .2s, background .2s;
+}
+.credit:hover { color: var(--text); border-color: #313744; transform: translateY(-1px); background: var(--bg-elev); }
+.credit b { color: var(--text); font-weight: 700; }
+.credit svg { width: 17px; height: 17px; fill: currentColor; transition: fill .2s; }
+.credit:hover svg { fill: #0a66c2; }
 
 /* ── Animations ──────────────────────────────────────── */
 @keyframes drop { from { opacity: 0; transform: translateY(-14px); } }
