@@ -136,7 +136,10 @@ function render() {
 
   // Season tabs
   const seasons = [...new Set(all.map((v) => v.season))].sort((a, b) => b - a);
-  if (!seasons.includes(state.season)) state.season = seasons[0];
+  if (!seasons.includes(state.season)) {
+    // Default to the newest season that actually has match/broadcast content.
+    state.season = seasons.find((s) => all.some((v) => v.season === s && v.status === 'none' && (v.kind === 'match' || v.kind === 'broadcast'))) || seasons[0];
+  }
   $('seasons').innerHTML = seasons
     .map((s) => `<button role="tab" data-season="${s}" aria-selected="${s === state.season}">${s}</button>`)
     .join('');
@@ -144,6 +147,9 @@ function render() {
   // Content-type chips with per-season counts
   const seasonVids = all.filter((v) => v.season === state.season && v.status === 'none' && (!state.query || v.title.toLowerCase().includes(state.query)));
   const counts = seasonVids.reduce((m, v) => ((m[v.kind] = (m[v.kind] || 0) + 1), m), {});
+  // If the selected type has nothing in this season, fall back to All.
+  const sel = KINDS.find((k) => k.id === state.kind);
+  if (sel && sel.k && !counts[sel.k]) state.kind = 'all';
   $('kinds').innerHTML = KINDS
     .filter((k) => !k.k || counts[k.k])
     .map((k) => {
