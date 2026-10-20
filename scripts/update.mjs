@@ -117,7 +117,7 @@ async function main() {
   const videos = [...byId.values()]
     .map((v) => {
       const o = overrides[v.id] || {};
-      return { ...v, ...classify(v.title, v.actualStart || v.publishedAt), ...o };
+      return { ...v, ...classify(v), ...o };
     })
     .sort((a, b) => (b.actualStart || b.publishedAt).localeCompare(a.actualStart || a.publishedAt));
 
