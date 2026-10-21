@@ -12,10 +12,11 @@
 //   API_BASE        override for testing
 
 import { readFile, writeFile } from 'node:fs/promises';
-import { classify } from './classify.mjs';
+import { classify, seasonFor } from './classify.mjs';
 
 const KEY = process.env.YT_API_KEY;
 const HANDLE = process.env.CHANNEL_HANDLE || '@CODLeague';
+const EWC_HANDLE = process.env.EWC_HANDLE || '@ewc';
 const FULL_SYNC = process.env.FULL_SYNC === '1' || process.env.FULL_SYNC === 'true';
 const API = process.env.API_BASE || 'https://www.googleapis.com/youtube/v3';
 const DATA = new URL('../site/data/videos.json', import.meta.url);
@@ -48,6 +49,65 @@ function seconds(iso = '') {
   if (!m) return 0;
   const [, d = 0, h = 0, min = 0, s = 0] = m.map((x) => Number(x) || 0);
   return d * 86400 + h * 3600 + min * 60 + s;
+}
+
+// Keep only EWC Call of Duty multiplayer titles (drop Warzone / WRS / qualifiers).
+function ewcTitleKeep(title) {
+  return (/\bewc\b|esports world cup/i.test(title)
+    && /call of duty|\bcod\b/i.test(title)
+    && !/warzone|\bwz\b|\bwrs\b|battle royale|resurgence|qualif/i.test(title));
+}
+
+// Pull EWC CoD-multiplayer FULL BROADCASTS from the Esports World Cup channel.
+// The CDL channel only carries EWC from 2026 on, so this backfills 2024-2025.
+// Content is static historical VODs, so this only runs on a full sync or when
+// no EWC videos exist yet (first backfill).
+async function collectEwc(byId) {
+  const ch = await api('channels', { part: 'contentDetails,snippet', forHandle: EWC_HANDLE });
+  const channel = ch.items?.[0];
+  if (!channel) { console.error(`EWC: no channel for ${EWC_HANDLE}`); return; }
+  const uploads = channel.contentDetails.relatedPlaylists.uploads;
+
+  // 1. Walk uploads (newest first); keep candidate ids by title.
+  const candidates = [];
+  let pageToken, pages = 0;
+  do {
+    const page = await api('playlistItems', {
+      part: 'snippet', playlistId: uploads, maxResults: 50, ...(pageToken && { pageToken }),
+    });
+    for (const it of page.items) if (ewcTitleKeep(it.snippet.title)) candidates.push(it.snippet.resourceId.videoId);
+    pageToken = page.nextPageToken;
+    pages++;
+  } while (pageToken && pages < 90);
+
+  // 2. Fetch details; keep full broadcasts (>=45 min) in seasons the CDL channel misses.
+  let added = 0;
+  for (let i = 0; i < candidates.length; i += 50) {
+    const res = await api('videos', {
+      part: 'snippet,contentDetails,liveStreamingDetails', id: candidates.slice(i, i + 50).join(','), maxResults: 50,
+    });
+    for (const item of res.items) {
+      const live = item.liveStreamingDetails || {};
+      const duration = seconds(item.contentDetails.duration);
+      const date = live.actualStartTime || item.snippet.publishedAt;
+      const season = seasonFor(item.snippet.title, date);
+      if (duration < 2700) continue;          // full broadcast days only
+      if (season < 2024 || season > 2025) continue; // CDL channel covers 2026+
+      byId.set(item.id, {
+        id: item.id,
+        title: item.snippet.title,
+        publishedAt: item.snippet.publishedAt,
+        status: item.snippet.liveBroadcastContent,
+        duration,
+        ...(live.scheduledStartTime && { scheduledStart: live.scheduledStartTime }),
+        ...(live.actualStartTime && { actualStart: live.actualStartTime }),
+        ...(live.actualStartTime || live.scheduledStartTime ? { stream: true } : {}),
+        source: 'ewc',
+      });
+      added++;
+    }
+  }
+  console.log(`EWC: scanned ${pages} page(s) of ${channel.snippet.title}, added ${added} broadcast(s)`);
 }
 
 async function main() {
@@ -112,6 +172,13 @@ async function main() {
   // Fetched-but-missing means deleted, private or a cancelled stream.
   for (const id of toFetch) if (!fetched.has(id)) byId.delete(id);
   console.log(`Refreshed ${fetched.size} video(s), dropped ${toFetch.size - fetched.size}`);
+
+  // 2b. Second source: EWC CoD-multiplayer broadcasts (static backfill for 2024-2025).
+  const hasEwc = existing.videos.some((v) => v.source === 'ewc');
+  if (FULL_SYNC || !hasEwc) {
+    try { await collectEwc(byId); }
+    catch (err) { console.error('EWC source failed (continuing):', err.message); }
+  }
 
   // 3. Classify (always re-run so rule/override changes apply to old videos).
   const videos = [...byId.values()]

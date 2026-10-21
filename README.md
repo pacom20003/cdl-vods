@@ -21,8 +21,13 @@ Browser
   videos, then re-checks anything that was live/upcoming so it becomes a VOD
   with its full length. A normal run costs ~3 API quota units (free limit: 10,000/day).
 - **Tournaments** are derived from titles (`scripts/classify.mjs`): Kickoff,
-  Major N Qualifiers, Major N Tournament, Championship, older "Stage N" events.
-  Anything unmatched shows under "Other videos".
+  Major N Qualifiers, Major N Tournament, Championship, Esports World Cup,
+  older "Stage N" events. Anything unmatched shows under "Other videos".
+- **EWC second source:** the CDL channel only carries Esports World Cup from
+  2026 on, so the updater also pulls the EWC CoD *multiplayer* full broadcasts
+  (excluding Warzone/WRS/qualifiers) from the `@ewc` channel to backfill the
+  2024–2025 EWC events. This runs on a full sync or the first run with no EWC
+  data yet; set the `EWC_HANDLE` variable to change the channel.
 
 ## Setup
 
