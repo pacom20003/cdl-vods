@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-20T17:34:30.007Z",
+ "updatedAt": "2026-10-21T00:03:20.902Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
@@ -196,7 +196,7 @@
    "actualStart": "2026-08-09T12:13:13Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Esports World Cup",
    "kind": "broadcast"
   },
   {
@@ -209,7 +209,7 @@
    "actualStart": "2026-08-08T12:13:33Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Esports World Cup",
    "kind": "broadcast"
   },
   {
@@ -222,7 +222,7 @@
    "actualStart": "2026-08-07T12:43:04Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Esports World Cup",
    "kind": "broadcast"
   },
   {
@@ -235,7 +235,7 @@
    "actualStart": "2026-08-06T12:16:36Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Esports World Cup",
    "kind": "broadcast"
   },
   {
@@ -248,7 +248,7 @@
    "actualStart": "2026-08-06T12:13:25Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Esports World Cup",
    "kind": "broadcast"
   },
   {
@@ -261,7 +261,7 @@
    "actualStart": "2026-08-05T12:12:31Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Esports World Cup",
    "kind": "broadcast"
   },
   {
