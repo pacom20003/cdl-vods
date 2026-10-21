@@ -46,6 +46,8 @@ export function tournamentFor(title) {
   const stage = title.match(/\bstage\s*(\d|iv|v|i{1,3})\b/i);
   const qual = /qualif/i.test(title);
 
+  // EWC multiplayer broadcasts carried on the CDL channel get their own row.
+  if (/esports world cup|\bewc\b/i.test(title)) return 'Esports World Cup';
   if (/\bchamp(ionship|ionships|s)?\b/i.test(title)) return 'Championship';
   if (major) return `Major ${toNum(major[1])} ${qual ? 'Qualifiers' : 'Tournament'}`;
   if (stage) return /\bmajor\b/i.test(title) ? `Stage ${toNum(stage[1])} Major` : `Stage ${toNum(stage[1])}`;
