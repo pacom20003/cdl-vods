@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-10-21T00:21:00.877Z",
+ "updatedAt": "2026-10-26T19:32:53.685Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "KMPDnxtfFOU",
+   "title": "1v4 from Huke on MW4 ☣️",
+   "publishedAt": "2026-10-26T18:38:44Z",
+   "status": "none",
+   "duration": 30,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "g9loUlG2e9c",
    "title": "Call of Duty League 2027 Season Announcement",
