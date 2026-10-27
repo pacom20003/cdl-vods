@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-10-26T19:32:53.685Z",
+ "updatedAt": "2026-10-27T18:58:42.660Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "5rxHAp35tOk",
+   "title": "SLAMMED 🤯 #MW4",
+   "publishedAt": "2026-10-27T15:30:23Z",
+   "status": "none",
+   "duration": 27,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "KMPDnxtfFOU",
    "title": "1v4 from Huke on MW4 ☣️",
