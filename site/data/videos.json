@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-10-27T18:58:42.660Z",
+ "updatedAt": "2026-10-28T19:45:48.135Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "gIAWxVnWg7c",
+   "title": "Just Ghosty in #MW4 👊",
+   "publishedAt": "2026-10-28T17:49:43Z",
+   "status": "none",
+   "duration": 26,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "5rxHAp35tOk",
    "title": "SLAMMED 🤯 #MW4",
