@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-10-30T18:50:46.803Z",
+ "updatedAt": "2026-10-30T22:42:32.675Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "WeWLbdw439o",
+   "title": "Flashbacks 😭",
+   "publishedAt": "2026-10-30T19:30:06Z",
+   "status": "none",
+   "duration": 33,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "BnTbB1aVvzc",
    "title": "Attach still got it 👴🔥",
