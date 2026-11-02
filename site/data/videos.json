@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-10-30T22:42:32.675Z",
+ "updatedAt": "2026-11-02T18:36:10.153Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "01avYItgQKE",
+   "title": "Don't worry, Huke’s got it 😤",
+   "publishedAt": "2026-11-02T15:51:01Z",
+   "status": "none",
+   "duration": 17,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "WeWLbdw439o",
    "title": "Flashbacks 😭",
