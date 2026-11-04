@@ -1,11 +1,83 @@
 {
- "updatedAt": "2026-11-02T18:36:10.153Z",
+ "updatedAt": "2026-11-04T21:31:13.760Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "-TgT3Nngnso",
+   "title": "Monster Energy Launch Invitational | Championship Sunday",
+   "publishedAt": "2026-11-04T16:39:01Z",
+   "status": "upcoming",
+   "duration": 0,
+   "scheduledStart": "2026-11-08T17:30:00Z",
+   "stream": true,
+   "season": 2027,
+   "tournament": "Championship",
+   "kind": "broadcast"
+  },
+  {
+   "id": "Phj8TjSwLlQ",
+   "title": "Monster Energy Launch Invitational | Day 2 (Alpha)",
+   "publishedAt": "2026-11-04T16:38:22Z",
+   "status": "upcoming",
+   "duration": 0,
+   "scheduledStart": "2026-11-07T17:30:00Z",
+   "stream": true,
+   "season": 2027,
+   "tournament": null,
+   "kind": "broadcast"
+  },
+  {
+   "id": "0SbEZ85aaIE",
+   "title": "Monster Energy Launch Invitational | Day 1 (Delta)",
+   "publishedAt": "2026-11-04T16:37:30Z",
+   "status": "upcoming",
+   "duration": 0,
+   "scheduledStart": "2026-11-06T17:30:00Z",
+   "stream": true,
+   "season": 2027,
+   "tournament": null,
+   "kind": "broadcast"
+  },
+  {
+   "id": "bpyGtp3eHuo",
+   "title": "Monster Energy Launch Invitational | Day 1 (Charlie)",
+   "publishedAt": "2026-11-04T16:37:01Z",
+   "status": "upcoming",
+   "duration": 0,
+   "scheduledStart": "2026-11-06T17:30:00Z",
+   "stream": true,
+   "season": 2027,
+   "tournament": null,
+   "kind": "broadcast"
+  },
+  {
+   "id": "4Pl-Wfl1DMY",
+   "title": "Monster Energy Launch Invitational | Day 1 (Bravo)",
+   "publishedAt": "2026-11-04T16:36:19Z",
+   "status": "upcoming",
+   "duration": 0,
+   "scheduledStart": "2026-11-06T17:30:00Z",
+   "stream": true,
+   "season": 2027,
+   "tournament": null,
+   "kind": "broadcast"
+  },
+  {
+   "id": "-sadNflVqmY",
+   "title": "Monster Energy Launch Invitational | Day 1 (Alpha)",
+   "publishedAt": "2026-11-04T16:35:12Z",
+   "status": "upcoming",
+   "duration": 0,
+   "scheduledStart": "2026-11-06T17:30:00Z",
+   "stream": true,
+   "season": 2027,
+   "tournament": null,
+   "kind": "broadcast"
+  },
   {
    "id": "01avYItgQKE",
    "title": "Don't worry, Huke’s got it 😤",
