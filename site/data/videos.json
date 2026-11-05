@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-11-04T21:31:13.760Z",
+ "updatedAt": "2026-11-05T16:49:43.885Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "m4khicjOXr8",
+   "title": "Major II DreamHack Birmingham Tickets are LIVE 🚨",
+   "publishedAt": "2026-11-05T15:00:53Z",
+   "status": "none",
+   "duration": 22,
+   "season": 2027,
+   "tournament": "Major 2 Tournament",
+   "kind": "short"
+  },
   {
    "id": "-TgT3Nngnso",
    "title": "Monster Energy Launch Invitational | Championship Sunday",
