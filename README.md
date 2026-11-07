@@ -43,6 +43,12 @@ Browser
 
 Optional: set a repository **variable** `CHANNEL_HANDLE` to use a channel other than `@CODLeague` (the official Call of Duty League channel).
 
+Optional (**Cloudflare**): if the site is proxied through Cloudflare, add secrets
+`CLOUDFLARE_API_TOKEN` (a token with *Zone → Cache Purge* permission) and
+`CLOUDFLARE_ZONE_ID` so each code deploy purges the edge cache automatically.
+Without them the purge step is skipped; data updates don't need it (the client
+fetches `videos.json` cache-busted).
+
 ## Fixing misclassified videos
 
 Edit `site/data/overrides.json`, keyed by YouTube video ID:
