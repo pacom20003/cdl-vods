@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-11-07T18:58:38.775Z",
+ "updatedAt": "2026-11-07T22:28:59.865Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "sbktlX0aWUI",
+   "title": "“That’s cash” 😭😭😭",
+   "publishedAt": "2026-11-07T20:02:38Z",
+   "status": "none",
+   "duration": 16,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "Phj8TjSwLlQ",
    "title": "Monster Energy Launch Invitational | Day 2 (Alpha)",
