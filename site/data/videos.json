@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T02:55:30.059Z",
+ "updatedAt": "2026-11-07T03:06:18.559Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
@@ -50,8 +50,8 @@
    "id": "0SbEZ85aaIE",
    "title": "Monster Energy Launch Invitational | Day 1 (Delta)",
    "publishedAt": "2026-11-04T16:37:30Z",
-   "status": "live",
-   "duration": 0,
+   "status": "none",
+   "duration": 34228,
    "scheduledStart": "2026-11-06T17:30:00Z",
    "actualStart": "2026-11-06T17:32:24Z",
    "stream": true,
@@ -89,8 +89,8 @@
    "id": "-sadNflVqmY",
    "title": "Monster Energy Launch Invitational | Day 1 (Alpha)",
    "publishedAt": "2026-11-04T16:35:12Z",
-   "status": "live",
-   "duration": 0,
+   "status": "none",
+   "duration": 34287,
    "scheduledStart": "2026-11-06T17:30:00Z",
    "actualStart": "2026-11-06T17:31:48Z",
    "stream": true,
