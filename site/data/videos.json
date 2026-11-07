@@ -1,11 +1,24 @@
 {
- "updatedAt": "2026-11-07T03:06:18.559Z",
+ "updatedAt": "2026-11-07T18:58:38.775Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "Phj8TjSwLlQ",
+   "title": "Monster Energy Launch Invitational | Day 2 (Alpha)",
+   "publishedAt": "2026-11-04T16:38:22Z",
+   "status": "live",
+   "duration": 0,
+   "scheduledStart": "2026-11-07T17:30:00Z",
+   "actualStart": "2026-11-07T17:33:20Z",
+   "stream": true,
+   "season": 2027,
+   "tournament": null,
+   "kind": "broadcast"
+  },
   {
    "id": "gACULYL7Luc",
    "title": "IT WASN’T OVER 🤯🤯🤯",
@@ -118,18 +131,6 @@
    "stream": true,
    "season": 2027,
    "tournament": "Championship",
-   "kind": "broadcast"
-  },
-  {
-   "id": "Phj8TjSwLlQ",
-   "title": "Monster Energy Launch Invitational | Day 2 (Alpha)",
-   "publishedAt": "2026-11-04T16:38:22Z",
-   "status": "upcoming",
-   "duration": 0,
-   "scheduledStart": "2026-11-07T17:30:00Z",
-   "stream": true,
-   "season": 2027,
-   "tournament": null,
    "kind": "broadcast"
   },
   {
