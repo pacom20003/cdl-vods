@@ -132,13 +132,18 @@ function buildGroups(videos) {
 function render() {
   const all = state.data.videos.filter((v) => !v.hidden);
   const live = all.filter((v) => v.status === 'live');
+  const upcoming = all.filter((v) => v.status === 'upcoming').sort((a, b) => (a.scheduledStart || '').localeCompare(b.scheduledStart || ''));
   updateLiveLink(live);
 
   // Season tabs
   const seasons = [...new Set(all.map((v) => v.season))].sort((a, b) => b - a);
   if (!seasons.includes(state.season)) {
-    // Default to the newest season that actually has match/broadcast content.
-    state.season = seasons.find((s) => all.some((v) => v.season === s && v.status === 'none' && (v.kind === 'match' || v.kind === 'broadcast'))) || seasons[0];
+    // Land where the action is: the live season, then an upcoming season, else
+    // the newest season that has match/broadcast content.
+    state.season = (live[0] && live[0].season)
+      || (upcoming[0] && upcoming[0].season)
+      || seasons.find((s) => all.some((v) => v.season === s && v.status === 'none' && (v.kind === 'match' || v.kind === 'broadcast')))
+      || seasons[0];
   }
   $('seasons').innerHTML = seasons
     .map((s) => `<button role="tab" data-season="${s}" aria-selected="${s === state.season}">${s}</button>`)
@@ -158,22 +163,26 @@ function render() {
     })
     .join('');
 
-  // Hero: live first, else newest match/broadcast of the season
+  // Live and upcoming belong to a season — scope them to the selected one so
+  // they don't repeat on every season tab.
+  const seasonLive = live.filter((v) => v.season === state.season);
+  const seasonUpcoming = upcoming.filter((v) => v.season === state.season);
+
+  // Hero: live first (this season), else newest match/broadcast of the season
   const hero = $('hero');
   if (!state.query) {
     const seasonAll = all.filter((v) => v.season === state.season && v.status === 'none');
-    const featured = live[0]
+    const featured = seasonLive[0]
       || seasonAll.filter((v) => v.kind === 'match' || v.kind === 'broadcast').sort((a, b) => dateOf(b).localeCompare(dateOf(a)))[0]
       || seasonAll.sort((a, b) => dateOf(b).localeCompare(dateOf(a)))[0];
     if (featured) { hero.innerHTML = heroHTML(featured, featured.status === 'live'); hero.hidden = false; }
     else hero.hidden = true;
   } else hero.hidden = true;
 
-  // Special rows: live + upcoming (across all seasons)
+  // Special rows: live + upcoming for the selected season only
   const special = [];
-  if (live.length) special.push({ key: 'live-now', name: 'Live now', vids: [...live], oldest: dateOf(live[0]), newest: dateOf(live[0]) });
-  const upcoming = all.filter((v) => v.status === 'upcoming').sort((a, b) => (a.scheduledStart || '').localeCompare(b.scheduledStart || ''));
-  if (upcoming.length) special.push({ key: 'upcoming', name: 'Upcoming streams', vids: upcoming, oldest: dateOf(upcoming[0]), newest: dateOf(upcoming[upcoming.length - 1]) });
+  if (seasonLive.length) special.push({ key: 'live-now', name: 'Live now', vids: [...seasonLive], oldest: dateOf(seasonLive[0]), newest: dateOf(seasonLive[0]) });
+  if (seasonUpcoming.length) special.push({ key: 'upcoming', name: 'Upcoming streams', vids: seasonUpcoming, oldest: dateOf(seasonUpcoming[0]), newest: dateOf(seasonUpcoming[seasonUpcoming.length - 1]) });
 
   // Tournament rows for the selected season
   const seasonFiltered = all.filter((v) => v.season === state.season && v.status === 'none' && matches(v));
