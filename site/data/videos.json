@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T22:28:59.865Z",
+ "updatedAt": "2026-11-08T01:41:43.638Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
@@ -20,8 +20,8 @@
    "id": "Phj8TjSwLlQ",
    "title": "Monster Energy Launch Invitational | Day 2 (Alpha)",
    "publishedAt": "2026-11-04T16:38:22Z",
-   "status": "live",
-   "duration": 0,
+   "status": "none",
+   "duration": 28010,
    "scheduledStart": "2026-11-07T17:30:00Z",
    "actualStart": "2026-11-07T17:33:20Z",
    "stream": true,
