@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-11-09T02:10:58.717Z",
+ "updatedAt": "2026-11-09T20:06:44.271Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "Iz8SIWKmZmg",
+   "title": "BLOCKED BY BEANS 🤯🤯🤯",
+   "publishedAt": "2026-11-09T16:05:46Z",
+   "status": "none",
+   "duration": 17,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "ucCn9Fcau7A",
    "title": "WHAT JUST HAPPENED ⁉️🤯🤯",
