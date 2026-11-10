@@ -48,6 +48,10 @@ export function tournamentFor(title) {
 
   // EWC multiplayer broadcasts carried on the CDL channel get their own row.
   if (/esports world cup|\bewc\b/i.test(title)) return 'Esports World Cup';
+  // The Monster Energy Launch Invitational is its own preseason event, not the
+  // CDL Championship — even when a day is labelled "Championship Sunday". Match
+  // before the Championship rule below so that subtitle doesn't misclassify it.
+  if (/launch invitational/i.test(title)) return 'Launch Invitational';
   if (/\bchamp(ionship|ionships|s)?\b/i.test(title)) return 'Championship';
   if (major) return `Major ${toNum(major[1])} ${qual ? 'Qualifiers' : 'Tournament'}`;
   if (stage) return /\bmajor\b/i.test(title) ? `Stage ${toNum(stage[1])} Major` : `Stage ${toNum(stage[1])}`;
