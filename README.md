@@ -67,6 +67,9 @@ To change the rules for every video, edit `scripts/classify.mjs`; each run re-cl
 ```sh
 YT_API_KEY=... node scripts/update.mjs      # FULL_SYNC=1 to read the whole channel
 python3 -m http.server -d site 8080         # open http://localhost:8080
+npm test                                    # run the classifier unit tests
 ```
 
-Node 22+, no dependencies.
+Node 22+, no dependencies. The classification logic (`scripts/classify.mjs`)
+is covered by unit tests in `scripts/classify.test.mjs` (Node's built-in test
+runner); CI runs them before every fetch/deploy so a bad rule change can't ship.

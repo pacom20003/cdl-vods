@@ -6,6 +6,14 @@
 const ROMAN = { i: 1, ii: 2, iii: 3, iv: 4, v: 5 };
 const toNum = (s) => ROMAN[s.toLowerCase()] ?? Number(s);
 
+// ISO 8601 duration ("PT2H13M5S") -> seconds.
+export function seconds(iso = '') {
+  const m = iso.match(/P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  if (!m) return 0;
+  const [, d = 0, h = 0, min = 0, s = 0] = m.map((x) => Number(x) || 0);
+  return d * 86400 + h * 3600 + min * 60 + s;
+}
+
 // ---------------------------------------------------------------------------
 // Season
 //
@@ -61,6 +69,14 @@ export function tournamentFor(title) {
   if (/\bminor\b/i.test(title)) return 'Minor';
   if (qual) return 'Qualifiers';
   return null;
+}
+
+// Keep only EWC Call of Duty multiplayer titles (drop Warzone / WRS / qualifiers).
+// Used to filter the @ewc second source down to CoD-multiplayer broadcasts.
+export function ewcTitleKeep(title) {
+  return (/\bewc\b|esports world cup/i.test(title)
+    && /call of duty|\bcod\b/i.test(title)
+    && !/warzone|\bwz\b|\bwrs\b|battle royale|resurgence|qualif/i.test(title));
 }
 
 // ---------------------------------------------------------------------------

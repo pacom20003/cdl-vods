@@ -1,0 +1,11 @@
+{
+  "name": "cdl-vods",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static CDL VOD archive with a zero-dependency YouTube updater.",
+  "scripts": {
+    "test": "node --test \"scripts/*.test.mjs\"",
+    "update": "node scripts/update.mjs"
+  }
+}

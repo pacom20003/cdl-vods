@@ -12,7 +12,7 @@
 //   API_BASE        override for testing
 
 import { readFile, writeFile } from 'node:fs/promises';
-import { classify, seasonFor } from './classify.mjs';
+import { classify, seasonFor, seconds, ewcTitleKeep } from './classify.mjs';
 
 const KEY = process.env.YT_API_KEY;
 const HANDLE = process.env.CHANNEL_HANDLE || '@CODLeague';
@@ -41,21 +41,6 @@ async function readJson(url, fallback) {
   } catch {
     return fallback;
   }
-}
-
-// ISO 8601 duration ("PT2H13M5S") -> seconds
-function seconds(iso = '') {
-  const m = iso.match(/P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-  if (!m) return 0;
-  const [, d = 0, h = 0, min = 0, s = 0] = m.map((x) => Number(x) || 0);
-  return d * 86400 + h * 3600 + min * 60 + s;
-}
-
-// Keep only EWC Call of Duty multiplayer titles (drop Warzone / WRS / qualifiers).
-function ewcTitleKeep(title) {
-  return (/\bewc\b|esports world cup/i.test(title)
-    && /call of duty|\bcod\b/i.test(title)
-    && !/warzone|\bwz\b|\bwrs\b|battle royale|resurgence|qualif/i.test(title));
 }
 
 // Pull EWC CoD-multiplayer FULL BROADCASTS from the Esports World Cup channel.

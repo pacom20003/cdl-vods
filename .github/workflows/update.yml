@@ -34,6 +34,11 @@ jobs:
         with:
           node-version: 22
 
+      # Gate the run on the classifier unit tests so a bad rule change can't
+      # fetch, commit or deploy. Fast (~0.1s) and runs on every trigger.
+      - name: Run tests
+        run: node --test "scripts/*.test.mjs"
+
       - name: Fetch videos from YouTube
         run: node scripts/update.mjs
         env:
