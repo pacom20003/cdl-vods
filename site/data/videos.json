@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-11-10T18:00:22.112Z",
+ "updatedAt": "2026-11-10T23:14:14.836Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "v4ZZpYDq4T4",
+   "title": "The first weekend of competitive Hijack was a movie. 🎬",
+   "publishedAt": "2026-11-10T21:02:13Z",
+   "status": "none",
+   "duration": 49,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "qsEIaRgxo0E",
    "title": "\"I'm only good in 8's\" 😭💼",
