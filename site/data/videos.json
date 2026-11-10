@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-11-10T01:50:45.395Z",
+ "updatedAt": "2026-11-10T18:00:22.112Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "qsEIaRgxo0E",
+   "title": "\"I'm only good in 8's\" 😭💼",
+   "publishedAt": "2026-11-10T17:06:23Z",
+   "status": "none",
+   "duration": 23,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "Iz8SIWKmZmg",
    "title": "BLOCKED BY BEANS 🤯🤯🤯",
