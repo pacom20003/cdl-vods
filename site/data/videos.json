@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-09T20:06:44.271Z",
+ "updatedAt": "2026-11-10T01:50:45.395Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
@@ -66,7 +66,7 @@
    "actualStart": "2026-11-08T17:31:05Z",
    "stream": true,
    "season": 2027,
-   "tournament": "Championship",
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
@@ -89,7 +89,7 @@
    "actualStart": "2026-11-07T17:33:20Z",
    "stream": true,
    "season": 2027,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
@@ -142,7 +142,7 @@
    "actualStart": "2026-11-06T17:32:24Z",
    "stream": true,
    "season": 2027,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
@@ -155,7 +155,7 @@
    "actualStart": "2026-11-06T17:32:20Z",
    "stream": true,
    "season": 2027,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
@@ -168,7 +168,7 @@
    "actualStart": "2026-11-06T17:32:05Z",
    "stream": true,
    "season": 2027,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
@@ -181,7 +181,7 @@
    "actualStart": "2026-11-06T17:31:48Z",
    "stream": true,
    "season": 2027,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
@@ -6629,7 +6629,7 @@
    "status": "none",
    "duration": 7695,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "match"
   },
   {
@@ -6649,7 +6649,7 @@
    "status": "none",
    "duration": 5461,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "match"
   },
   {
@@ -6669,7 +6669,7 @@
    "status": "none",
    "duration": 4066,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "match"
   },
   {
@@ -6682,7 +6682,7 @@
    "actualStart": "2025-11-23T16:31:23Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
@@ -6715,7 +6715,7 @@
    "actualStart": "2025-11-22T15:31:35Z",
    "stream": true,
    "season": 2026,
-   "tournament": null,
+   "tournament": "Launch Invitational",
    "kind": "broadcast"
   },
   {
