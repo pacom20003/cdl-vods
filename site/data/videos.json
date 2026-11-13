@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-11-12T20:27:39.484Z",
+ "updatedAt": "2026-11-13T22:03:08.099Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "inShscEqpPc",
+   "title": "Drazah dumping on FaZe 😭😭",
+   "publishedAt": "2026-11-13T19:55:19Z",
+   "status": "none",
+   "duration": 30,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "FOAhlwTD2xc",
    "title": "8 seconds... whole team down 💪",
