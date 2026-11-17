@@ -1,11 +1,21 @@
 {
- "updatedAt": "2026-11-13T22:03:08.099Z",
+ "updatedAt": "2026-11-17T19:48:32.273Z",
  "channel": {
   "id": "UCbLIqv9Puhyp9_ZjVtfOy7w",
   "title": "Call of Duty League",
   "handle": "@CODLeague"
  },
  "videos": [
+  {
+   "id": "vVTFQmgedfU",
+   "title": "It’s Skyz’s year 💃 (Dashy POV)",
+   "publishedAt": "2026-11-17T17:51:12Z",
+   "status": "none",
+   "duration": 37,
+   "season": 2027,
+   "tournament": null,
+   "kind": "short"
+  },
   {
    "id": "inShscEqpPc",
    "title": "Drazah dumping on FaZe 😭😭",
